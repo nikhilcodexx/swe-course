@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Theme: applies the saved light or dark choice before the page draws, so it does not flash -->
+<script>try{var t=localStorage.getItem("curr4y-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>4-Year Software, AI and ML Curriculum</title>
+<!-- Styles: all colours, layout and fonts live in style.css -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- 1. HEADER: title, intro and quick facts -->
+<div class="wrap"><header class="top">
+<h1>Four years, sixteen terms:<br>software engineer in the age of AI</h1>
+<p class="sub">A university-style program built only from free resources. Software development and machine learning are the core. English, project management, architecture and system design, and product and selling run alongside every term. Tick things off, pass each checkpoint, then move on.</p>
+<div class="meta"><span><b>16 terms</b> of 13 weeks</span><span><b>About 8 hours</b> a day, Mon to Sat</span><span><b>$0</b> required</span></div></header></div>
+<!-- 2. STICKY PROGRESS BAR: filled by script.js -->
+<div class="dash"><div class="dash-in"><div class="bar"><span id="fill"></span></div><div class="count"><b id="done">0</b> of <b id="total">0</b> done</div><button id="reset">Clear progress</button>
+<!-- Theme button: switches between light and dark mode (logic is in script.js, section 10) -->
+<button id="theme" type="button" aria-label="Switch between light and dark mode">Dark mode</button></div></div>
+<div class="wrap">
+<!-- 3. TABLE OF CONTENTS: year links are added by script.js -->
+<nav class="toc"><ol id="toc"><li><a href="#how">How the program works</a></li><li><a href="#time">Daily timetable and weekly rhythm</a></li></ol></nav>
+
+<!-- 4. HOW THE PROGRAM WORKS: terms, grading, hardware and honest limits -->
+<section id="how"><h2 class="year" style="margin-top:0;border-top:none;padding-top:0">How the program works</h2>
+<div class="call"><p><strong>Terms.</strong> Each term has 12 teaching weeks and 1 break week. Week 6 is the midterm, week 12 is finals and Demo Day. If you can only study 4 hours a day, make every term 6 months. A plan you can sustain beats one that looks fast.</p>
+<p><strong>Grading.</strong> Finals and problem sets 40%, midterm 20%, project 40%. Pass mark is 70%. Below 70%, repeat the weak chapters before moving on. Ask a peer or mentor to check at least the project grade, because self-grading drifts upward.</p>
+<p><strong>The 30-minute rule.</strong> Free AI chat tools are fine for learning, but sit with a problem for 30 minutes first, and ask for explanations, not finished code.</p>
+<p><strong>Hardware.</strong> Train models on free Google Colab or Kaggle notebooks, not on an old PC. Everything else here runs on a modest laptop and a browser. An SSD is the best upgrade you can make.</p>
+<p><strong>Honest limit.</strong> This gives you skills and a public portfolio, not an accredited degree. For software and AI work, the portfolio is what people check. Verify each link is still live before the term starts.</p></div></section>
+
+<!-- 5. DAILY TIMETABLE AND WEEKLY RHYTHM -->
+<section id="time"><h2 class="year">Daily timetable and weekly rhythm</h2>
+<div class="tblw"><table><tr><th>06:30–07:30</th><td>Body: exercise, walk, breakfast</td></tr>
+<tr><th>08:00–10:00</th><td>Lecture block A: software or computer science course</td></tr>
+<tr><th>10:15–12:15</th><td>Lecture block B: AI, ML or maths course</td></tr>
+<tr><th>12:15–13:30</th><td>Lunch and rest, screens off</td></tr>
+<tr><th>13:30–15:30</th><td>Lab or studio: write code, solve problems, build the project</td></tr>
+<tr><th>15:45–17:15</th><td>Professional block (see below)</td></tr>
+<tr><th>17:15–18:00</th><td>English: speaking, listening, writing</td></tr>
+<tr><th>19:30–20:30</th><td>Optional: problem set, Anki review, notes</td></tr></table></div>
+<div class="tblw"><table><tr><th>Monday</th><td>Kickoff: set the week’s goals on your Kanban board. Professional block: project management.</td></tr>
+<tr><th>Tuesday</th><td>Professional block: architecture and system design.</td></tr>
+<tr><th>Wednesday</th><td>Professional block: product and selling (interviews, pitching).</td></tr>
+<tr><th>Thursday</th><td>Professional block: architecture or project work.</td></tr>
+<tr><th>Friday</th><td>Weekly demo: show what you built to someone, then a 15-minute retrospective.</td></tr>
+<tr><th>Saturday</th><td>Project day, 9:00 to 16:00, then one research talk or paper.</td></tr>
+<tr><th>Sunday</th><td>Off. 30 minutes to plan the next week only.</td></tr></table></div>
+<div class="call"><p><strong>Working method, from day one.</strong> Keep notes in markdown in a Git repo, in your own words. Keep a decision log: what you chose, what you rejected, why. Review with Anki. State a hypothesis before debugging, change one thing at a time, and record what did not work. Talk through your work out loud in English, and record a 5-minute technical explanation every week.</p></div></section>
+
+<!-- 6. TERMS: all 16 terms are generated here by script.js from the data in that file -->
+<div id="terms"></div>
+
+<!-- 7. SECONDARY SUBJECTS BY YEAR: English, project management, architecture, selling -->
+<section id="pro"><h2 class="year">Secondary subjects: what to learn each year</h2>
+<div class="tblw"><table><tr><th></th><th>Year 1</th><th>Year 2</th><th>Year 3</th><th>Year 4</th></tr>
+<tr><th>English</th><td>Grammar, listening, short emails, README writing</td><td>Reading papers, summaries, speaking club</td><td>Technical blogs, conference-style talks</td><td>Thesis, defense, interviews, negotiation</td></tr>
+<tr><th>Project management</th><td>Kanban, Scrum, weekly sprints</td><td>Estimation, risk, retrospectives</td><td>Startup-style planning, stakeholder updates</td><td>Run the capstone like a team</td></tr>
+<tr><th>Architecture and system design</th><td>Client-server, HTTP, REST</td><td>APIs, caching, queues, databases, trade-offs</td><td>Distributed systems, AI-era design (RAG, agents, evals)</td><td>Decision records, design reviews, mock interviews</td></tr>
+<tr><th>Product and selling</th><td>Who is the user?</td><td>Customer discovery, pitching</td><td>MVP, pricing, first customer</td><td>Launch, outreach, closing</td></tr></table></div>
+<div class="call"><p><strong>Architecture rule.</strong> For every term project, draw a diagram, list three design options, and write why you rejected two. That habit matters more than any single course.</p></div></section>
+</div>
+
+<!-- Script: all course data and the progress checklist logic live in script.js -->
+<script src="script.js"></script>
+</body>
+</html>

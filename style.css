@@ -1,0 +1,75 @@
+/* =====================================================
+   style.css: look and feel of the 4-year curriculum site
+   Colours match the original roadmap: cream paper, navy text, teal ticks, amber numbers
+   ===================================================== */
+
+/* 1. COLOUR AND LAYOUT VARIABLES: change colours here and the whole site updates */
+:root{--ink:#12212B;--paper:#FBFAF7;--card:#fff;--rule:#D8D3C8;--muted:#54636B;--teal:#0F6A63;--amber:#A85F0C;--plum:#6B3A62;--soft:#F4F1EB;--bar:#E7E3DA;--tealtint:#B7D3C9;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+
+/* 1b. DARK MODE COLOURS: used when the theme button sets data-theme="dark" on the page */
+:root[data-theme="dark"]{--ink:#E8E6DF;--paper:#14191C;--card:#1B2226;--rule:#33403F;--muted:#9FB0B3;--teal:#4FB3A8;--amber:#E0A04F;--plum:#C58BBB;--soft:#1E2629;--bar:#2A3438;--tealtint:#2F5550;color-scheme:dark}
+/* 2. BASE PAGE STYLES: page background, text colour, font */
+html{background:var(--paper);color:var(--ink);scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Inter","Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px 80px}
+/* 3. HEADER: big title, intro text and the small facts row */
+header.top{border-bottom:2px solid var(--ink);padding:48px 0 26px}
+h1{font:400 clamp(2rem,5.4vw,3.2rem)/1.1 Georgia,"Iowan Old Style",serif;margin:0 0 14px;letter-spacing:-.015em}
+.sub{max-width:62ch;color:var(--muted);margin:0 0 22px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:.87rem;color:var(--muted);padding-top:16px;border-top:1px solid var(--rule)}
+.meta b{color:var(--ink)}
+/* 4. STICKY PROGRESS BAR: stays at the top while you scroll */
+.dash{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--rule);padding:12px 0;margin-bottom:36px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:30}
+.dash-in{max-width:940px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.bar{flex:1 1 200px;min-width:150px;height:10px;background:var(--bar);overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:var(--teal);transition:width .3s}
+.count{font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}.count b{color:var(--ink)}
+/* 5. BUTTONS AND KEYBOARD FOCUS OUTLINE */
+button{font:inherit;font-size:.82rem;background:none;border:1px solid var(--rule);color:var(--muted);padding:5px 12px;cursor:pointer;border-radius:2px}
+button:hover{border-color:var(--ink);color:var(--ink)}
+button:focus-visible,summary:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+/* 6. YEAR HEADINGS AND TERM BLOCKS */
+h2.year{font:400 1.9rem Georgia,serif;margin:56px 0 6px;border-top:2px solid var(--ink);padding-top:26px}
+p.yg{color:var(--muted);max-width:66ch;margin:0 0 34px}
+.term{margin:0 0 54px;scroll-margin-top:90px}
+.th{display:flex;gap:18px;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:9px}
+.tn{font:2.2rem/1 Georgia,serif;color:var(--amber);flex:0 0 auto}
+.th h3{font:400 1.55rem/1.15 Georgia,serif;margin:0;flex:1}
+.tw{font-size:.84rem;color:var(--muted);white-space:nowrap}
+.tg{color:var(--muted);margin:12px 0 20px;max-width:66ch}
+h4{font-size:.96rem;margin:26px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--rule)}
+/* 7. CHECKLIST ITEMS (each course, project and event) */
+ul.tasks{list-style:none;margin:0;padding:0}
+ul.tasks li{display:flex;gap:14px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--rule)}
+ul.tasks li:last-child{border-bottom:none}
+/* 8. CUSTOM CHECKBOXES */
+input[type=checkbox]{appearance:none;-webkit-appearance:none;flex:0 0 auto;width:19px;height:19px;margin:3px 0 0;border:1.5px solid var(--muted);background:var(--card);cursor:pointer;border-radius:2px}
+input[type=checkbox]:checked{background:var(--teal);border-color:var(--teal)}
+input[type=checkbox]:checked::after{content:"";display:block;width:5px;height:10px;margin:1px 0 0 5px;border:solid var(--paper);border-width:0 2px 2px 0;transform:rotate(45deg)}
+/* 9. TASK TEXT, LINKS AND NOTES */
+.tb{flex:1;min-width:0}.tt{font-weight:600}.tt a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--tealtint)}.tt a:hover{color:var(--teal)}
+.note{display:block;color:var(--muted);font-size:.88rem;margin-top:2px}
+li.done .tb{opacity:.5}li.done .tt{text-decoration:line-through}
+/* 10. SMALL TAGS (Software, AI and ML, Maths, Professional) */
+.tag{display:inline-block;font-size:.72rem;border:1px solid var(--rule);color:var(--muted);padding:1px 7px;border-radius:2px;margin-right:8px;vertical-align:1px}
+.tag.pro{border-color:var(--plum);color:var(--plum)}
+/* 11. CHECKPOINT BOXES (open and close) */
+details.check{border-left:3px solid var(--amber);background:var(--soft);margin:20px 0 0}
+details.check summary{cursor:pointer;padding:12px 16px;font-weight:600;font-size:.95rem;list-style:none}
+details.check summary::-webkit-details-marker{display:none}
+details.check summary::before{content:"▸ ";color:var(--amber)}details.check[open] summary::before{content:"▾ "}
+details.check .in{padding:0 16px 14px 30px}details.check ol{margin:0;padding-left:18px}details.check li{margin-bottom:6px;font-size:.94rem}
+/* 12. CALLOUT BOXES */
+.call{border:1px solid var(--rule);border-left:3px solid var(--teal);background:var(--card);padding:14px 18px;margin:20px 0;font-size:.94rem}.call p{margin:0 0 8px}.call p:last-child{margin:0}
+/* 13. TABLES (timetable and yearly secondary subjects) */
+.tblw{overflow-x:auto}table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.9rem}
+th,td{text-align:left;padding:8px 12px 8px 0;border-bottom:1px solid var(--rule);vertical-align:top}th{white-space:nowrap}
+/* 14. TABLE OF CONTENTS */
+nav.toc{margin:0 0 40px;padding:18px 0;border-bottom:1px solid var(--rule)}nav.toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px;font-size:.93rem}nav.toc li{margin-bottom:6px;break-inside:avoid}nav.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+code{font-size:.9em}
+/* 15. PHONE LAYOUT AND REDUCED MOTION */
+@media (max-width:620px){body{font-size:16px}.wrap{padding:0 18px 64px}.dash-in{padding:0 18px}nav.toc ol{columns:1}.th{flex-wrap:wrap;gap:6px 14px}.tw{width:100%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
