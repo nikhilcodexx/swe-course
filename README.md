@@ -32,6 +32,7 @@ No frameworks, no build step, no sign-up. It is plain HTML, CSS and JavaScript.
 ```
 curriculum-site/
 ├── index.html   Page structure (open this file)
+├── about.html   About the website and its features
 ├── style.css    Colours, layout and fonts
 ├── script.js    Course data and checklist logic
 └── README.md    This file
@@ -45,7 +46,7 @@ Ticks are saved in your own browser (localStorage), on that device only. They do
 
 - This plan gives you skills and a public portfolio, not an accredited degree.
 - It assumes about 8 hours of study a day, Monday to Saturday. If you study 4 hours a day, make every term 6 months.
-- Free courses move or change. Check each link before you start a term, and replace broken ones with upadted link (use you google docs to write updated link).
+- Free courses move or change. Check each link before you start a term, and replace broken ones with an updated link (you can keep a list of updated links in your own Google Doc).
 - Train machine learning models on free Google Colab or Kaggle notebooks, not on an old computer.
 
 ## Contributing

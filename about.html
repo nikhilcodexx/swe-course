@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- about.html: the About page. It reuses style.css, so it matches the main curriculum page. -->
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Theme: applies the saved light or dark choice before the page draws (same choice as the main page) -->
+<script>try{var t=localStorage.getItem("curr4y-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>About: 4-Year Free Curriculum</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 1. TOP BAR: link back to the curriculum and the theme button -->
+<div class="dash"><div class="dash-in">
+<a class="navlink" href="index.html">&larr; Back to the curriculum</a>
+<button id="theme" type="button" aria-label="Switch between light and dark mode">Dark mode</button>
+</div></div>
+
+<div class="wrap about">
+
+<!-- 2. TITLE AND INTRODUCTION -->
+<header class="top">
+<h1>About this curriculum</h1>
+<p class="sub">A free, university-style learning plan as a simple website with a progress checklist. It has 4 years, 16 terms of 3 months each, daily class timings, term events, projects and checkpoints, built only from free resources.</p>
+<div class="meta"><span><b>Core:</b> software development, machine learning and AI</span><span><b>Every term:</b> English, project management, architecture and system design, product and selling</span></div>
+</header>
+<p>No frameworks, no build step, no sign-up. It is plain HTML, CSS and JavaScript.</p>
+
+<!-- 3. FEATURES -->
+<h2>Features</h2>
+<ul>
+<li>16 terms (13 weeks each: 12 teaching weeks and 1 break week)</li>
+<li>Every course name is a link to its free resource</li>
+<li>Tick boxes with a progress bar, saved in your browser</li>
+<li>A project and six events per term: orientation, proposal, midterm, mid-project review, finals and Demo Day, retrospective</li>
+<li>A checkpoint with questions for every term</li>
+<li>A daily timetable, a weekly rhythm and a table of secondary subjects by year</li>
+<li>Light mode (cream and teal) and dark mode, with a toggle button that remembers your choice</li>
+<li>Works on phones and desktops</li>
+</ul>
+
+<!-- 4. THE FOUR YEARS -->
+<h2>The four years</h2>
+<div class="tblw"><table>
+<tr><th>Year</th><th>Terms</th><th>Focus</th></tr>
+<tr><td>1. Foundations</td><td>1 to 4</td><td>Command line, Git, Python, web, databases, first AI concepts</td></tr>
+<tr><td>2. Engineering core</td><td>5 to 8</td><td>Algorithms, Java, TypeScript, ML foundations, cloud, security</td></tr>
+<tr><td>3. AI engineering</td><td>9 to 12</td><td>Deep learning, NLP and LLM apps, distributed systems, MLOps, product</td></tr>
+<tr><td>4. Capstone and launch</td><td>13 to 16</td><td>Specialize, build, launch, defend, get hired or start something</td></tr>
+</table></div>
+
+<!-- 5. FILES -->
+<h2>Files</h2>
+<pre>curriculum-site/
+├── index.html   Main curriculum page
+├── about.html   This page
+├── style.css    Colours, layout and fonts
+├── script.js    Course data and checklist logic
+└── README.md    Project description for GitHub</pre>
+
+<!-- 6. HOW PROGRESS IS SAVED -->
+<h2>How progress is saved</h2>
+<p>Ticks are saved in your own browser (localStorage), on that device only. They do not sync between devices and are not shared with anyone. Clearing browser data or using the Clear progress button removes them.</p>
+
+<!-- 7. GOOD TO KNOW -->
+<h2>Good to know</h2>
+<ul>
+<li>This plan gives you skills and a public portfolio, not an accredited degree.</li>
+<li>It assumes about 8 hours of study a day, Monday to Saturday. If you study 4 hours a day, make every term 6 months.</li>
+<li>Free courses move or change. Check each link before you start a term, and replace broken ones with an updated link (you can keep a list of updated links in your own Google Doc).</li>
+<li>Train machine learning models on free Google Colab or Kaggle notebooks, not on an old computer.</li>
+</ul>
+
+<!-- 8. CONTRIBUTING -->
+<h2>Contributing</h2>
+<p>Found a broken link or a better free resource? Open an issue or a pull request with the change in <code>script.js</code>.</p>
+
+<!-- 9. CREDITS -->
+<h2>Credits</h2>
+<p>The resources linked here belong to their authors and institutions, such as Harvard CS50, MIT OpenCourseWare, Stanford, the University of Helsinki, freeCodeCamp, fast.ai and others. This project only links to them.</p>
+
+</div>
+
+<!-- 10. THEME BUTTON LOGIC: same saved choice as the main page, so both pages always match -->
+<script>
+var KEY="curr4y-theme",r=document.documentElement,b=document.getElementById("theme");
+function set(t){r.setAttribute("data-theme",t);b.textContent=t=="dark"?"Light mode":"Dark mode";try{localStorage.setItem(KEY,t)}catch(e){}}
+var s="light";try{s=localStorage.getItem(KEY)||"light"}catch(e){}
+set(s);
+b.addEventListener("click",function(){set(r.getAttribute("data-theme")=="dark"?"light":"dark")});
+</script>
+</body>
+</html>
